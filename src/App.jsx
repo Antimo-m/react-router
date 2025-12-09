@@ -5,6 +5,7 @@ import Prodotti from "./pages/Prodotti"
 import Info from "./pages/ChiSiamo"
 import DefaultLayout from './assets/Layout/DefaultLayout'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css';
 
 
 function App() {

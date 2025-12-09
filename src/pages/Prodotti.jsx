@@ -6,7 +6,7 @@ function Prodotti() {
     const [prodotti, setProdotti] = useState([])
 
     useEffect(() => {
-        axios.get("https://fakestoreapi.com/products?limit=5")
+        axios.get("https://fakestoreapi.com/products?limit=14")
             .then((resp) => {
 
                 setProdotti(resp.data)

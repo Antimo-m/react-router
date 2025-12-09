@@ -1,13 +1,13 @@
-import { NavLink, Links } from "react-router-dom"
+import { NavLink } from "react-router-dom"
 
-function header () {
+function Header () {
     return (
         <>
-            <nav class="navbar navbar-expand-lg bg-body-tertiary gap-3">
-                <div class="container-fluid ">
-                    <NavLink to="/">Home</NavLink>
-                    <NavLink to="/Prodotti">Prodotti</NavLink>
-                    <NavLink to="/Chisiamo">Chi siamo</NavLink>
+            <nav className=" ">
+                <div className="container d-flex gap-3 py-3 ">
+                    <NavLink className="nav-link"  to="/">Home</NavLink>
+                    <NavLink className="nav-link" to="/Prodotti">Prodotti</NavLink>
+                    <NavLink className="nav-link" to="/Chisiamo">Chi siamo</NavLink>
                     </div>
                 
             </nav>
@@ -18,4 +18,4 @@ function header () {
     )
 }
 
-export default header
+export default Header
