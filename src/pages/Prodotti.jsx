@@ -15,22 +15,33 @@ function Prodotti() {
 
     return (
         <>
-            <h2> I nostri Prodotti</h2>
-            {prodotti.map((prodotto) => {
-                return (
-                <div class="card" >
-                    <img src={prodotto.image} class="card-img-top" alt={prodotto.title} />
-                    <>
-                        <div class="card-body">
-                            <h5 class="card-title">{prodotto.title}</h5>
-                            <p class="card-text">{prodotto.price}</p>
-                            <p  class="card.text">{prodotto.description}</p>
-                            <p class="card.text">{prodotto.category}</p>
+            <h2 className="text-center text-info"> I nostri Prodotti</h2>
+           
+            <div className="d-flex justify-content-center gap-3 flex-wrap"> 
+                {prodotti.map((prodotto) => (
+                    <div className="card" key={prodotto.id} style={{width:"250px"}}>
+                       
+                            <img
+                                src={prodotto.image}
+                                className="card-img-top"
+                                alt={prodotto.title}
+                                style={{ height: "150px", objectFit: "contain" }} 
+                            />
+                            <div className="card-body">
+                                <h5 className="card-title">
+                                    {prodotto.title}
+                                </h5>
+                                <p className="card-text">
+                                    ${prodotto.price}
+                                </p>
+                                <p className="card-text">
+                                    {prodotto.category}
+                                </p>
+                            </div>
                         </div>
-                    </>
-                </div>
-                )
-            })}
+                   
+                ))}
+            </div>
 
         </>
     )
