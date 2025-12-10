@@ -3,9 +3,10 @@ import { useState, useEffect } from "react"
 import { Link } from "react-router-dom";
 
 
+
 function Prodotti() {
     const [prodotti, setProdotti] = useState([])
-
+   
     useEffect(() => {
         axios.get("https://fakestoreapi.com/products?limit=14")
             .then((resp) => {
@@ -19,6 +20,7 @@ function Prodotti() {
         <>
             <div className="d-flex justify-content-center gap-3 flex-wrap">
                 {prodotti.map((prodotto) => (
+                    
                     <div className="card" key={prodotto.id} style={{ width: "250px" }}>
                         <img
                             src={prodotto.image}
@@ -42,6 +44,7 @@ function Prodotti() {
                                 <Link className="btn btn-primary" to={`/prodotti/${prodotto.id}`}>Dettagli</Link>    {/* qui siamo andati a dare un link dinamico a tutti i prodotti tramite id del singolo prodotto per costruire l'url della pagina dettaglio */}
                             </div>
                         </>
+                       
                     </div>
 
 
