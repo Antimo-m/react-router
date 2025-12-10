@@ -1,9 +1,10 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 function DettagliProdotto() {
     const { id } = useParams();
+    const navigate = useNavigate();
 
     const [prodotto, setProdotto] = useState(null);
 
@@ -11,13 +12,18 @@ function DettagliProdotto() {
     useEffect(() => {
         axios.get(`https://fakestoreapi.com/products/${id}`)
             .then((resp) => {
-                setProdotto(resp.data)
-                console.log(resp)
+                if (!resp.data.id) {
+                    navigate("/notfound");
+                    return;
+                }
+
+                setProdotto(resp.data);
             })
             .catch((err) => {
                 console.log(err)
+                navigate("/NoFound")
             })
-    }, [id]);
+    }, [id, navigate]);
 
     return (
         <>

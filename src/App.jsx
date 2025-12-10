@@ -7,6 +7,7 @@ import DefaultLayout from "./Layout/DefaultLayout"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import DettagliProdotto from './pages/DettagliProdotto'
+import NoFound from "./pages/NoFound.jsx"
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
             <Route path='/Chisiamo' element={<Info />} />
             <Route path='/prodotti' element={<Prodotti />} />
             <Route path='/prodotti/:id' element={<DettagliProdotto/>} /> {/* Creo La route dinamica che poi preleverò con useParams in dettagli prodotto  */}
+            <Route path='*' element={<NoFound/>}/>
           </Route>
         </Routes>
       </BrowserRouter>
