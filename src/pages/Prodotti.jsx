@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react"
+import { Link } from "react-router-dom";
 
 
 function Prodotti() {
@@ -10,6 +11,7 @@ function Prodotti() {
             .then((resp) => {
 
                 setProdotti(resp.data)
+                console.log(resp.data);
             })
     }, [])
 
@@ -37,6 +39,7 @@ function Prodotti() {
                                 <p className="card-text">
                                     {prodotto.category}
                                 </p>
+                               <Link to={`/prodotti/${prodotto.id}`}>Dettagli</Link>    {/* qui siamo andati a dare un link dinamico a tutti i prodotti tramite id del singolo prodotto per costruire l'url della pagina dettaglio */}
                             </div>
                         </div>
                    

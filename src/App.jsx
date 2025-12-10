@@ -3,10 +3,10 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Home from "./pages/Home"
 import Prodotti from "./pages/Prodotti"
 import Info from "./pages/ChiSiamo"
-import DefaultLayout from './assets/Layout/DefaultLayout'
+import DefaultLayout from "./Layout/DefaultLayout"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-
+import DettagliProdotto from './pages/DettagliProdotto'
 
 function App() {
 
@@ -17,7 +17,8 @@ function App() {
           <Route element={<DefaultLayout/>}>
             <Route path='/' element={<Home />} />
             <Route path='/Chisiamo' element={<Info />} />
-            <Route path='/Prodotti' element={<Prodotti />} />
+            <Route path='/prodotti' element={<Prodotti />} />
+            <Route path='/prodotto/:id' element={<DettagliProdotto/>}></Route> {/* Creo La route dinamica che poi preleverò con useParams in dettagli prodotto  */}
           </Route>
         </Routes>
       </BrowserRouter>
