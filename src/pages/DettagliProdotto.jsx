@@ -50,7 +50,7 @@ function DettagliProdotto() {
 
 
                             <p className="card-text">
-                                <span className="text-danger"> Rating di questo Prodotto:</span>     {prodotto.rating.rate} ({prodotto.rating.count})
+                                <span className="text-danger"> Rating di questo Prodotto:</span>{prodotto.rating.rate} ({prodotto.rating.count})
                             </p>
                         </div>
                     </div>

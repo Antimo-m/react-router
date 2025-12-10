@@ -20,10 +20,9 @@ function Prodotti() {
             <div className="d-flex justify-content-center gap-3 flex-wrap">
                 {prodotti.map((prodotto) => (
                     <div className="card" key={prodotto.id} style={{ width: "250px" }}>
-
                         <img
                             src={prodotto.image}
-                            className="card-img-top"
+                            className="card-img-top py-2"
                             alt={prodotto.title}
                             style={{ height: "150px", objectFit: "contain" }}
                         />
@@ -37,14 +36,18 @@ function Prodotti() {
                             <p className="card-text">
                                 {prodotto.category}
                             </p>
-                            <div className="text-center">
-                                <Link to={`/prodotti/${prodotto.id}`}>Dettagli</Link>    {/* qui siamo andati a dare un link dinamico a tutti i prodotti tramite id del singolo prodotto per costruire l'url della pagina dettaglio */}
-                            </div>
                         </div>
+                        <>
+                            <div className="text-center mb-3">
+                                <Link className="btn btn-primary" to={`/prodotti/${prodotto.id}`}>Dettagli</Link>    {/* qui siamo andati a dare un link dinamico a tutti i prodotti tramite id del singolo prodotto per costruire l'url della pagina dettaglio */}
+                            </div>
+                        </>
                     </div>
+
 
                 ))}
             </div>
+
 
 
         </>
